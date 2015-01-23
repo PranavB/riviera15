@@ -1,0 +1,84 @@
+﻿<Page xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps" 
+    x:Class="riviera__15.event_details"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:riviera__15"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    RequestedTheme="Light" Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="register" Icon="Shop" Click="AppBarButton_Tapped"/>
+            <AppBarButton Label="remind" Icon="CalendarReply" Name="remindBtn" >
+                <Button.Flyout>
+                    <Flyout>
+                        <Grid Height="120" Margin="19">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Would you like to be reminded about this event?" Grid.Row="0"
+                                       Foreground="#fff" Style="{StaticResource MessageDialogTitleStyle}" FontSize="23" />
+                            <Grid Grid.Row="1" HorizontalAlignment="Stretch" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition Width="0.5*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Content="yes" Margin="0, 0, 10, 0" Grid.Column="0" HorizontalAlignment="Stretch" BorderBrush="White" Foreground="White" Click="Button_Click" />
+                                <Button Name="hideFlyoutBtn" Content="no" Grid.Column="1" HorizontalAlignment="Stretch" BorderBrush="White" Foreground="White" Click="hideFlyoutBtn_Click" />
+                            </Grid>
+                        </Grid>
+                    </Flyout>
+                </Button.Flyout>
+            </AppBarButton>
+            <AppBarButton Label="locate" Icon="Map" Name="locateBtn" Click="locateBtn_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid Margin="0,-26.667,0,-0.333">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="97"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Name="banner" Grid.Row="0" Background="#2ecc71" Margin="0, -10, 0, 0">
+            <TextBlock Foreground="White" Text="{Binding event_title}"
+                       FontSize="40" TextWrapping="NoWrap" 
+                       Margin="19,45,19,0" Name="eventTitleTxtBx"
+                       FontFamily="Segoe WP Light"
+                       Style="{StaticResource HeaderTextBlockStyle}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+
+                <TextBlock Text="description" Margin="19,20,0,0" FontSize="30" Style="{StaticResource HeaderTextBlockStyle}" />
+                <!-- Event Description -->
+                <TextBlock FontSize="20" Name="descTxtBx" Margin="19, 5, 19, 0" TextWrapping="Wrap"  Text="{Binding description}"/>
+
+
+                <TextBlock Name="Timelabel" Text="time" Margin="19, 20, 0, 0" FontSize="30" Style="{StaticResource HeaderTextBlockStyle}" />
+                <!-- Event Time -->
+                <TextBlock FontSize="20" Name="timeTxtBx" Margin="19, 5, 19, 0" TextWrapping="Wrap"  Text="{Binding startTime}" Tag="{Binding duration}"/>
+                
+                
+                <TextBlock Text="date" Name="datelabel" Margin="19, 20, 0, 0" FontSize="30" Style="{StaticResource HeaderTextBlockStyle}" />
+                <!-- Event Date -->
+                <TextBlock FontSize="20" Name="dateTxtBx" Margin="19, 5, 19, 0" TextWrapping="Wrap"  Text="{Binding date}" Tag="{Binding formattedDate}"/>
+              
+                <TextBlock Text="location" Name="loclabel" Margin="19, 20, 0, 0" FontSize="30" Style="{StaticResource HeaderTextBlockStyle}" />
+                <!-- Event Location -->
+                <TextBlock FontSize="20" Name="locationTxtBx" Margin="19, 5, 19, 0" TextWrapping="Wrap"  Text="{Binding location}" Tag="{Binding place}"/>
+
+                <TextBlock Text="prize money" Name="prizeMoneyLabel" Margin="19, 20, 0, 0" FontSize="30" Style="{StaticResource HeaderTextBlockStyle}" />
+                <!-- Event Prize money -->
+                <TextBlock FontSize="20" Name="prizeMoneyTxtBx" Margin="19, 5, 19, 0" TextWrapping="Wrap"  Text="{Binding prize}"/>
+
+                <TextBlock Name="reglabel" Text="registration fee" Margin="19, 20, 0, 0" FontSize="30" Style="{StaticResource HeaderTextBlockStyle}" />
+                <!-- Event Reg Fee -->
+                <TextBlock FontSize="20" Name="regFeeTxtBx" Margin="19, 5, 19, 30" TextWrapping="Wrap"  Text="{Binding reg_fee}"/>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

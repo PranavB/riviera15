@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="riviera__15.comingsoon"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:riviera__15"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="backBtn" Icon="Home" Label="home" Click="backBtn_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="CornflowerBlue">
+        <TextBlock VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontFamily="Assets/Font/Pacifico.ttf#Pacifico"
+                   FontSize="34"
+                   Text="coming soon!" Style="{StaticResource GroupHeaderTextBlockStyle}"
+                   >
+        </TextBlock>
+    </Grid>
+</Page>

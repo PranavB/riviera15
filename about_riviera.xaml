@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="riviera__15.about_riviera"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:riviera__15"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <!--<TextBlock Text="riviera '15"
+                       Style="{ThemeResource TitleTextBlockStyle}"
+                       Margin="0,12,0,0"/>-->
+
+            <TextBlock Text="riviera 2015" 
+                       Margin="0, 5, 0, 10" 
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <ScrollViewer>
+            <StackPanel>
+              
+            <TextBlock HorizontalAlignment="Stretch"
+                       TextAlignment="Left"
+                       Margin="0,0,0,10" FontFamily="Assets/Font/Pacifico.ttf#Pacifico"
+                       TextWrapping="Wrap" 
+                       Text="celebrating the Colours of India!"
+                       VerticalAlignment="Top" FontSize="31"/>
+                <Image HorizontalAlignment="Stretch" Stretch="Fill" 
+                  Margin="0, 0, 0, 20" 
+                  VerticalAlignment="Top"
+                  Source="Assets/Pictures/riviera.jpg" />
+                <TextBlock HorizontalAlignment="Stretch"
+                       TextWrapping="WrapWholeWords" 
+                       Text="Riviera is VIT University's ISO Certified Annual International Sports and Cultural Carnival. This festival is an endeavour to provide a platform to all individuals to showcase their skills and develop their potential via arts, sports, music, dance, drama, debate or fashion. The four day extravaganza sees participation of students from diverse backgrounds, nationalities and cultures." 
+                       VerticalAlignment="Top" FontSize="22"/>
+
+            </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>
+

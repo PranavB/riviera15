@@ -1,0 +1,85 @@
+﻿<Page
+    x:Class="riviera__15.about"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:riviera__15"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="home" Icon="Home" Click="AppBarButton_Click"></AppBarButton>
+            </CommandBar.PrimaryCommands>
+            
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="riviera '15" 
+                   Style="{ThemeResource TitleTextBlockStyle}" 
+                   Margin="19, 10, 0, 0"/>
+
+        <Pivot  Grid.Row="1">
+                <PivotItem Header="about">
+                <ScrollViewer>
+                    <Grid x:Name="ContentRoot" >
+
+                        <Grid Margin="0, 0, 0, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="0" Source="Assets/Pictures/aboutBanner.jpg" Stretch="Fill"/>
+                            <StackPanel Grid.Row="1" Orientation="Vertical">
+                                <TextBlock TextWrapping="Wrap" Text="VIT University, Vellore" Style="{StaticResource GroupHeaderTextBlockStyle}" Margin="0,20,0,10" FontSize="28"/>
+                                <TextBlock TextWrapping="WrapWholeWords" Text="VIT University is a progressive educational institution that is dedicated to the pursuit of excellence. Students here are encouraged on this journey by our committed faculty, world-class facilities and student-friendly educational systems. " FontSize="22" Style="{StaticResource MessageDialogContentStyle}"/>
+             <TextBlock TextWrapping="Wrap" Text="Our Sponsor" Margin="0, 20, 0, 20" Style="{StaticResource GroupHeaderTextBlockStyle}" FontSize="28"/>
+                                <Image Source="Assets/Pictures/Sponsors/pepsi.PNG" Height="120" Stretch="Uniform" Margin="0, 20, 0, 30" />
+                            </StackPanel>
+                        </Grid>
+                       
+                    </Grid>
+                </ScrollViewer>
+
+            </PivotItem>
+                
+            
+
+            <PivotItem Header="location" Margin="19, 0, 19, 0">
+
+                <Maps:MapControl HorizontalAlignment="Stretch" 
+                                 VerticalAlignment="Top"
+                                 Name="vitmap"
+                                 Height="500"
+                                 MapServiceToken="GezSF-9OSTvSnvS-WyC4Aw"
+                                 />
+
+            </PivotItem>
+            <PivotItem  Header="devs" RequestedTheme="Dark">
+                <Grid>
+                <StackPanel> 
+                    <TextBlock Text="Shreyanshi Basu" Margin="0, 0, 0, 5" FontSize="35" FontFamily="Segoe UI Light" />
+                    <TextBlock Text="Faizan Khan" Margin="0, 0, 0, 5" FontSize="35" FontFamily="Segoe WP Light" />
+                    <TextBlock Text="Pulkit Juneja" Margin="0, 0, 0, 5" FontSize="35" FontFamily="Segoe WP Light" />
+                    <TextBlock Text="Pranav Bolar" Margin="0, 0, 0, 5" FontSize="35" FontFamily="Segoe WP Light" />
+                </StackPanel>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

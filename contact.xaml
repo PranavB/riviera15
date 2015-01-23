@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="riviera__15.contact"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:riviera__15"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0" Fill="#FF5695CB"></Rectangle>
+        <HyperlinkButton Grid.Row="0" NavigateUri="http://facebook.com/rivieraVITUniversity"
+            VerticalAlignment="Stretch" 
+            HorizontalAlignment="Center">
+            <Image Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                   Source="Assets/Pictures/fb.png" />
+        </HyperlinkButton>
+
+        <Rectangle Grid.Row="1" Fill="#FF84BBEA"></Rectangle>
+        <HyperlinkButton Grid.Row="1" NavigateUri="http://twitter.com/VITriviera"
+            VerticalAlignment="Stretch" 
+            HorizontalAlignment="Center">
+            <Image Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                   Source="Assets/Pictures/tw.png" />
+        </HyperlinkButton>
+
+        <Rectangle Grid.Row="2" Fill="#FF2D5B83"></Rectangle>
+        <HyperlinkButton Grid.Row="2" NavigateUri="https://www.linkedin.com/company/vellore-institute-of-technology?trk=prof-following-company-logo"
+            VerticalAlignment="Stretch" 
+            HorizontalAlignment="Center">
+            <Image Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                   Source="Assets/Pictures/li.png" />
+        </HyperlinkButton>
+
+        <Rectangle Grid.Row="3" Fill="#FFCB5B56"></Rectangle>
+        <HyperlinkButton Grid.Row="3" NavigateUri="http://www.google.com/+VITRiviera15"
+            VerticalAlignment="Stretch" 
+            HorizontalAlignment="Center">
+            <Image Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                   Source="Assets/Pictures/gp.png" />
+        </HyperlinkButton>
+
+        <Rectangle Grid.Row="4" Fill="#FFC9C4C4"></Rectangle>
+        <HyperlinkButton Grid.Row="4" NavigateUri="mailto:events.riviera@vit.ac.in"
+            VerticalAlignment="Stretch" 
+            HorizontalAlignment="Center">
+            <Image Grid.Row="4" HorizontalAlignment="Stretch" 
+                   Source="Assets/Pictures/em.png" />
+        </HyperlinkButton>
+        <Rectangle Grid.Row="5" Fill="#FFA0E471"></Rectangle>
+        <Button Grid.Row="5" Click="Button_Click" BorderThickness="0"
+            VerticalAlignment="Stretch" 
+            HorizontalAlignment="Center">
+            <Image Grid.Row="5" HorizontalAlignment="Stretch" 
+                   Source="Assets/Pictures/phone_symbol.png" />
+        </Button>
+        
+    </Grid>
+</Page>
